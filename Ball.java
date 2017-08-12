@@ -17,9 +17,9 @@ public class Ball extends BaseObject {
         return direction;
     }
 
-    public void setDirection(double direction) {
+    /*public void setDirection(double direction) {
         this.direction = direction;
-    }
+    }*/
 
     public double getDx() {
         return dx;
@@ -46,14 +46,14 @@ public class Ball extends BaseObject {
 
     @Override
     public void draw(Canvas canvas) {
-        canvas.setPoint(this.x, this.y, 'O');
+        canvas.setPoint(x, y, 'O');
     }
 
     @Override
     public void move() {
         if(!isFrozen){
-            this.x = this.x + dx;
-            this.y = this.y + dy;
+            x+= dx;
+            y+=dy;
         }
     }
 
@@ -61,7 +61,7 @@ public class Ball extends BaseObject {
         this.isFrozen = false;
     }
 
-    public void setDirection(){
+    public void setDirection(double direction){
         this.direction = direction;
         double angle = Math.toRadians(direction);
         dx = Math.cos(angle) * speed;
@@ -69,6 +69,6 @@ public class Ball extends BaseObject {
     }
 
     public void checkRebound(int minx, int maxx, int miny, int maxy){
-
+        
     }
 }

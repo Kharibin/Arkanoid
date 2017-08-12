@@ -2,12 +2,21 @@ package com.javarush.task.task24.task2413;
 
 import java.util.List;
 
-public abstract class Arkanoid {
+public class Arkanoid {
     private int height, width;
     private Ball ball;
     private Stand stand;
     private List<Brick> bricks;
     static Arkanoid game;
+
+
+
+    public void run(){}
+
+    public static void main(String[] args) {
+
+    }
+
 
     public int getHeight() {
         return height;
@@ -54,13 +63,16 @@ public abstract class Arkanoid {
         this.width = width;
     }
 
-    public abstract void run();
+    public void move(){
+        this.stand.move();
+        this.ball.move();
+    }
 
-    public abstract void move();
-
-
-
-    public static void main(String[] args) {
-
+    public void draw(Canvas canvas){
+        this.ball.draw(canvas);
+        this.stand.draw(canvas);
+        for (Brick x: this.bricks) {
+            x.draw(canvas);
+        }
     }
 }
