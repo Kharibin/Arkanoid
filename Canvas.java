@@ -33,4 +33,34 @@ public class Canvas {
         this.height = height;
         this.matrix = new char[height+2][width+2];
     }
+
+    public void setPoint(double x, double y, char c){
+        int intX = (int)Math.round(x);
+        int intY = (int)Math.round(y);
+        if (!(intX < 0 || intY < 0 || intY > matrix.length || intX > matrix[0].length)){
+            matrix[intY][intX] = c;
+        
+        }
+    }
+
+    public void drawMatrix(double x, double y, int[][] matrix, char c){
+        for (int i = (int)y; i < matrix.length; i++){
+            for (int j = (int)x; j < matrix[i].length; j++) {
+                if (matrix[i][j] != 0) setPoint(x+j, y +i, c);
+            }
+        }
+    }
+
+    public void clear(){
+        this.matrix = new char[height+2][width+2];
+    }
+
+    public void print(){
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j]);
+            }
+            System.out.println();
+        }
+    }
 }
