@@ -2,7 +2,7 @@ package com.javarush.task.task24.task2413;
 
 import java.util.List;
 
-public class Arkanoid {
+public abstract class Arkanoid {
     private int height, width;
     private Ball ball;
     private Stand stand;
@@ -54,13 +54,9 @@ public class Arkanoid {
         this.width = width;
     }
 
-    public void run(){
+    public abstract void run();
 
-    }
-
-    public void move(){
-
-    }
+    public abstract void move();
 
     public static void main(String[] args) {
 
