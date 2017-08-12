@@ -58,6 +58,8 @@ public abstract class Arkanoid {
 
     public abstract void move();
 
+
+
     public static void main(String[] args) {
 
     }
